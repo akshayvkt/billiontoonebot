@@ -11,8 +11,13 @@ api_key = st.secrets["ANTHROPIC_API_KEY"]
 
 st.set_page_config(page_title="🧬 Geneius")
 
-image = Image.open('btoone.png')
-image = image.resize((400,300))
+
+st.markdown("""
+<style>
+.img-container {position:absolute;top:0;right:0;} 
+</style>
+<div class="img-container"><img src="btoone.png" width=100 height=100></div>
+""", unsafe_allow_html=True)
 
 st.image(image, caption='BillionToOne')
 
