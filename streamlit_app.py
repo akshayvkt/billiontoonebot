@@ -144,20 +144,20 @@ for message in st.session_state.messages:
 
 if user_prompt := st.chat_input("Enter your query"):
         st.session_state.messages.append({"role":"user","content":user_prompt})
-
-    with st.chat_message("user"):
-        st.markdown(user_prompt)
+        
+        with st.chat_message("user"):
+            st.markdown(user_prompt)
 
         
-    with st.chat_message("assistant"):
-        message_placeholder = st.empty()
-        full_response = ""
-        response = anthropic.completions.create(
-                model="claude-2.0",
-                max_tokens_to_sample=3000,
-                prompt=f"""{HUMAN_PROMPT}{system_prompt}{user_prompt}{AI_PROMPT}""",
-                )
-        full_response = response.completion
+        with st.chat_message("assistant"):
+            message_placeholder = st.empty()
+            full_response = ""
+            response = anthropic.completions.create(
+                    model="claude-2.0",
+                    max_tokens_to_sample=3000,
+                    prompt=f"""{HUMAN_PROMPT}{system_prompt}{user_prompt}{AI_PROMPT}""",
+                    )
+            full_response = response.completion
 #         for response in anthropic.completions.create(
 #                 model="claude-2.0",
 #                 max_tokens_to_sample=3000,
