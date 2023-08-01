@@ -21,7 +21,7 @@ image = image.resize((519,188))
 # <div class="img-container"><img src="btoone.png" width=100 height=100></div>
 # """, unsafe_allow_html=True)
 
-st.image("btoone.png", clamp=True, use_column_width=False)
+st.image(image, clamp=True, use_column_width=False)
 
 st.title('🧬 Geneius, for BillionToOne')
 
