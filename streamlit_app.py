@@ -7,7 +7,7 @@ anthropic = Anthropic(
 api_key = st.secrets["ANTHROPIC_API_KEY"]
 )
 
-st.title('🧬 Geneius by BillionToOne')
+# st.title('🧬 Geneius by BillionToOne')
 
 st.set_page_config(page_title="🧬 Geneius by BillionToOne")
 
