@@ -11,7 +11,7 @@ api_key = st.secrets["ANTHROPIC_API_KEY"]
 
 st.set_page_config(page_title="🧬 Geneius")
 
-image = Image.open('btoone_resized.png').resize((543/2,188/2))
+image = Image.open('btoone_resized.png').resize((271,94))
 # st.markdown("""
 # <style>
 # .img-container {position:absolute;top:0;right:0;} 
