@@ -136,7 +136,7 @@ if "messages" not in st.session_state:
 
 #Accept user input
 
-if user_prompt != st.chat_input("Enter your query: "):
+if user_prompt := st.chat_input("Enter your query: "):
     st.session_state.messages = system_prompt
     with st.chat_message("user"):
         st.markdown(user_prompt)
