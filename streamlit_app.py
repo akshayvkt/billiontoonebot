@@ -1,4 +1,5 @@
 import streamlit as st
+import openai
 import anthropic
 from anthropic import Anthropic, HUMAN_PROMPT, AI_PROMPT
 
