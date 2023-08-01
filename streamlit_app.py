@@ -10,7 +10,7 @@ api_key = st.secrets["ANTHROPIC_API_KEY"]
 
 st.set_page_config(page_title="🧬 Geneius")
 
-st.title('🧬 Geneius')
+st.title('🧬 Geneius, for BillionToOne')
 
 
 st.write("Geneius is a conversational bot that helps answer your questions related to BillionToOne's products. With Geneius, you don't have to worry about using English - to better serve you, the bot supports over 10 languages!")
