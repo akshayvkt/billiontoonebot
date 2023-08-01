@@ -3,7 +3,7 @@ import openai
 import anthropic
 from anthropic import Anthropic, HUMAN_PROMPT, AI_PROMPT
 
-anthropic = AsyncAnthropic(
+anthropic = Anthropic(
 api_key = st.secrets["ANTHROPIC_API_KEY"]
 )
 
@@ -146,15 +146,12 @@ if user_prompt := st.chat_input("Enter your query: "):
     with st.chat_message("assistant"):
         message_placeholder = st.empty()
         full_response = ""
-        stream = await anthropic.completions.create(
+        response = anthropic.completions.create(
                 model="claude-2.0",
                 max_tokens_to_sample=3000,
                 prompt=f"""{HUMAN_PROMPT}{system_prompt}{user_prompt}{AI_PROMPT}""",
-                stream=True
                 )
-        
-        async for completion in stream:
-            full_response += completion.completion
+        full_response = response.completion
 #         for response in anthropic.completions.create(
 #                 model="claude-2.0",
 #                 max_tokens_to_sample=3000,
