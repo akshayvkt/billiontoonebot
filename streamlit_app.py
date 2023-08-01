@@ -138,7 +138,6 @@ if "messages" not in st.session_state:
 
 if user_prompt != st.chat_input("Enter your query: "):
     st.session_state.messages = system_prompt
-    st.session_state.messages.append(user_prompt)
     with st.chat_message("user"):
         st.markdown(user_prompt)
         
@@ -162,6 +161,7 @@ if user_prompt != st.chat_input("Enter your query: "):
 #             message_placeholder.markdown(full_response+"▌")
         message_placeholder.markdown(full_response)
     st.session_state.messages.append(HUMAN_PROMPT)
+    st.session_state.messages.append(user_prompt)
     st.session_state.messages.append(AI_PROMPT)
     st.session_state.messages.append(full_response)
 
