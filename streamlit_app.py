@@ -12,7 +12,7 @@ api_key = st.secrets["ANTHROPIC_API_KEY"]
 st.set_page_config(page_title="🧬 Geneius")
 
 image = Image.open('btoone.png')
-image = image.resize((400,400))
+image = image.resize((519,188))
 
 # st.markdown("""
 # <style>
@@ -21,7 +21,7 @@ image = image.resize((400,400))
 # <div class="img-container"><img src="btoone.png" width=100 height=100></div>
 # """, unsafe_allow_html=True)
 
-st.image("btoone.png", width=250, clamp=True, use_column_width=False)
+st.image("btoone.png", clamp=True, use_column_width=False)
 
 st.title('🧬 Geneius, for BillionToOne')
 
@@ -193,4 +193,4 @@ if user_prompt := st.chat_input("What does UNITY screen for?"):
 #6: Send the system prompt to Claude only once
 
 
-st.info("**Disclaimer:** This chatbot is not associated with BillionToOne and should not be considered as one. This is an unofficial bot created over BillionToOne\'s public FAQs available on their website. This is not medical advice")
+st.info("**Disclaimer:** This chatbot is not associated with BillionToOne and should not be considered as one. This is an unofficial bot created over BillionToOne\'s public FAQs available on their website. This is not medical advice",icon="⚠️")
