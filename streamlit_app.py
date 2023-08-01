@@ -8,12 +8,12 @@ api_key = st.secrets["ANTHROPIC_API_KEY"]
 )
 
 
-st.set_page_config(page_title="🧬 Geneius by BillionToOne")
+st.set_page_config(page_title="🧬 Geneius")
 
-st.title('🧬 Geneius by BillionToOne')
+st.title('🧬 Geneius')
 
 
-st.write("Geneius, our conversational bot, helps answers your questions related to our products. With Geneius, you don't have to worry about using English - to better serve you, we support over 10 languages!")
+st.write("Geneius is a conversational bot that helps answer your questions related to BillionToOne's products. With Geneius, you don't have to worry about using English - to better serve you, the bot supports over 10 languages!")
 
 
 system_prompt =  """
@@ -176,3 +176,6 @@ if user_prompt := st.chat_input("Enter your query"):
 #4: Return the response and show it to the user
 #5: On a follow-up question, take the existing conversation history along which contains the system prompt, user's previous conversation and assistant responses, along with the user's new input.
 #6: Send the system prompt to Claude only once
+
+st.write("Disclaimer: This chatbot is not associated with BillionToOne and should not be considered as one. This is an unofficial bot created over BillionToOne's public FAQs available on their website. This is not medical advice")
+
