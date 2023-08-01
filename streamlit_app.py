@@ -11,17 +11,17 @@ api_key = st.secrets["ANTHROPIC_API_KEY"]
 
 st.set_page_config(page_title="🧬 Geneius")
 
-# image = Image.open('btoone.png')
-# image = image.resize((300,300))
+image = Image.open('btoone.png')
+image = image.resize((300,300))
 
-st.markdown("""
-<style>
-.img-container {position:absolute;top:0;right:0;} 
-</style>
-<div class="img-container"><img src="btoone.png" width=100 height=100></div>
-""", unsafe_allow_html=True)
+# st.markdown("""
+# <style>
+# .img-container {position:absolute;top:0;right:0;} 
+# </style>
+# <div class="img-container"><img src="btoone.png" width=100 height=100></div>
+# """, unsafe_allow_html=True)
 
-# st.image(image, caption='BillionToOne')
+st.image("btoone.png", width=250, clamp=True, use_column_width=False)
 
 st.title('🧬 Geneius, for BillionToOne')
 
@@ -144,6 +144,9 @@ Always use the above format and style of delivery when resolving customer querie
 </SYSTEM PROMPT>
 """
 
+st.markdown("**Disclaimer:** This chatbot is not associated with BillionToOne and should not be considered as one. This is an unofficial bot created over BillionToOne's public FAQs available on their website. This is not medical advice")
+
+
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -191,5 +194,4 @@ if user_prompt := st.chat_input("What does UNITY screen for?"):
 #6: Send the system prompt to Claude only once
 
 
-st.markdown("**Disclaimer:** This chatbot is not associated with BillionToOne and should not be considered as one. This is an unofficial bot created over BillionToOne's public FAQs available on their website. This is not medical advice")
 
