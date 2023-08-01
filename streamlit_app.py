@@ -139,12 +139,13 @@ if "messages" not in st.session_state:
 #Accept user input
 
 for message in st.session_state.messages:
-        st.markdown(message)
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
 
 if user_prompt := st.chat_input("Enter your query"):
-#     st.session_state.messages = system_prompt
-    with st.chat_message("user"):
         st.session_state.messages.append({"role":"user","content":user_prompt})
+
+    with st.chat_message("user"):
         st.markdown(user_prompt)
 
         
