@@ -3,15 +3,17 @@ import openai
 import anthropic
 from anthropic import Anthropic, HUMAN_PROMPT, AI_PROMPT
 
-anthropic = Anthropic(
+anthropic = AsyncAnthropic(
 api_key = st.secrets["ANTHROPIC_API_KEY"]
 )
 
-# st.title('🧬 Geneius by BillionToOne')
 
 st.set_page_config(page_title="🧬 Geneius by BillionToOne")
 
-st.write('Hello world!')
+st.title('🧬 Geneius by BillionToOne')
+
+
+st.write("Geneius, our conversational bot, helps answers your questions related to our products. With Geneius, you don't have to worry about using English - to better serve you, we support over 10 languages!")
 
 
 system_prompt =  """
@@ -144,13 +146,15 @@ if user_prompt := st.chat_input("Enter your query: "):
     with st.chat_message("assistant"):
         message_placeholder = st.empty()
         full_response = ""
-        response = anthropic.completions.create(
+        stream = await anthropic.completions.create(
                 model="claude-2.0",
                 max_tokens_to_sample=3000,
                 prompt=f"""{HUMAN_PROMPT}{system_prompt}{user_prompt}{AI_PROMPT}""",
                 stream=True
                 )
-        full_response = response.completion
+        
+        async for completion in stream:
+            full_response += completion.completion
 #         for response in anthropic.completions.create(
 #                 model="claude-2.0",
 #                 max_tokens_to_sample=3000,
