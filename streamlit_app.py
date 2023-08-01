@@ -24,7 +24,9 @@ st.image(image, clamp=True, use_column_width=False)
 st.title('🧬 Geneius, for BillionToOne')
 
 
-st.write("Geneius is a conversational bot that helps answer your questions related to BillionToOne's products. With Geneius, you don't have to worry about using English - to better serve you, the bot supports over 10 languages!")
+st.write("**Geneius is a conversational bot** that helps answer your questions related to BillionToOne's products. With Geneius, you don't have to worry about using English - to better serve you, the bot supports over 10 languages!")
+
+st.write("\n\n\n\n")
 
 
 system_prompt =  """
