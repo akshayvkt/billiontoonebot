@@ -12,7 +12,7 @@ api_key = st.secrets["ANTHROPIC_API_KEY"]
 st.set_page_config(page_title="🧬 Geneius")
 
 image = Image.open('btoone.png')
-image = image.resize((300,300))
+image = image.resize((400,400))
 
 # st.markdown("""
 # <style>
@@ -192,6 +192,5 @@ if user_prompt := st.chat_input("What does UNITY screen for?"):
 #5: On a follow-up question, take the existing conversation history along which contains the system prompt, user's previous conversation and assistant responses, along with the user's new input.
 #6: Send the system prompt to Claude only once
 
-st.info("\n\n\n")
 
 st.info("**Disclaimer:** This chatbot is not associated with BillionToOne and should not be considered as one. This is an unofficial bot created over BillionToOne\'s public FAQs available on their website. This is not medical advice")
