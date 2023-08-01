@@ -11,7 +11,7 @@ api_key = st.secrets["ANTHROPIC_API_KEY"]
 
 st.set_page_config(page_title="🧬 Geneius")
 
-image = Image.open('btoone_resized.png')
+image = Image.open('btoone_resized.png').resize((543/2,188/2))
 # st.markdown("""
 # <style>
 # .img-container {position:absolute;top:0;right:0;} 
@@ -180,6 +180,8 @@ if user_prompt := st.chat_input("What does UNITY screen for?"):
 #             full_response +=response.completion
 #             message_placeholder.markdown(full_response+"▌")
         message_placeholder.markdown(full_response)
+        st.info("**Disclaimer:** This chatbot is not associated with BillionToOne and should not be considered as one. This is an unofficial bot created over BillionToOne\'s public FAQs available on their website. This is not medical advice.",icon="⚠️")
+    
     st.session_state.messages.append({"role":"assistant","content":full_response})
 
         
@@ -191,4 +193,4 @@ if user_prompt := st.chat_input("What does UNITY screen for?"):
 #6: Send the system prompt to Claude only once
 
 
-st.info("**Disclaimer:** This chatbot is not associated with BillionToOne and should not be considered as one. This is an unofficial bot created over BillionToOne\'s public FAQs available on their website. This is not medical advice.",icon="⚠️")
+# st.info("**Disclaimer:** This chatbot is not associated with BillionToOne and should not be considered as one. This is an unofficial bot created over BillionToOne\'s public FAQs available on their website. This is not medical advice.",icon="⚠️")
