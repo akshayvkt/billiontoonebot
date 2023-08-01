@@ -165,7 +165,8 @@ if user_prompt := st.chat_input("What does UNITY screen for?"):
 
         
     with st.chat_message("assistant"):
-        message_placeholder = st.empty()
+        message_placeholder = "Thinking ⏳"
+#         st.empty()
         full_response = ""
         response = anthropic.completions.create(
                 model="claude-2.0",
