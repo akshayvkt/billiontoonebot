@@ -191,4 +191,4 @@ if user_prompt := st.chat_input("What does UNITY screen for?"):
 #6: Send the system prompt to Claude only once
 
 
-st.info("**Disclaimer:** This chatbot is not associated with BillionToOne and should not be considered as one. This is an unofficial bot created over BillionToOne\'s public FAQs available on their website. This is not medical advice",icon="⚠️")
+st.info("**Disclaimer:** This chatbot is not associated with BillionToOne and should not be considered as one. This is an unofficial bot created over BillionToOne\'s public FAQs available on their website. This is not medical advice.",icon="⚠️")
