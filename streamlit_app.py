@@ -2,6 +2,7 @@ import streamlit as st
 import openai
 import anthropic
 from anthropic import Anthropic, HUMAN_PROMPT, AI_PROMPT
+from PIL import Image
 
 anthropic = Anthropic(
 api_key = st.secrets["ANTHROPIC_API_KEY"]
@@ -9,6 +10,10 @@ api_key = st.secrets["ANTHROPIC_API_KEY"]
 
 
 st.set_page_config(page_title="🧬 Geneius")
+
+image = Image.open('btoone.jpg')
+
+st.image(image, caption='BillionToOne')
 
 st.title('🧬 Geneius, for BillionToOne')
 
