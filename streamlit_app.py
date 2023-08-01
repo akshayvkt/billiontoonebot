@@ -4,7 +4,7 @@ import anthropic
 from anthropic import Anthropic, HUMAN_PROMPT, AI_PROMPT
 
 anthropic = Anthropic(
-api_key = st.secrets(ANTHROPIC_API_KEY)
+api_key = st.secrets("ANTHROPIC_API_KEY")
 )
 
 st.title('🧬 Geneius by BillionToOne')
