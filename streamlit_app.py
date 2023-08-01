@@ -144,7 +144,9 @@ for message in st.session_state.messages:
 if user_prompt := st.chat_input("Enter your query"):
 #     st.session_state.messages = system_prompt
     with st.chat_message("user"):
+        st.session_state.messages.append({"role":"user","content":user_prompt})
         st.markdown(user_prompt)
+
         
     with st.chat_message("assistant"):
         message_placeholder = st.empty()
@@ -164,10 +166,7 @@ if user_prompt := st.chat_input("Enter your query"):
 #             full_response +=response.completion
 #             message_placeholder.markdown(full_response+"▌")
         message_placeholder.markdown(full_response)
-    st.session_state.messages.append(HUMAN_PROMPT)
-    st.session_state.messages.append(user_prompt)
-    st.session_state.messages.append(AI_PROMPT)
-    st.session_state.messages.append(full_response)
+    st.session_state.messages.append({"role":"assistant","content":full_response})
 
         
 #1: Initialize the message session history with the system prompt
@@ -176,6 +175,7 @@ if user_prompt := st.chat_input("Enter your query"):
 #4: Return the response and show it to the user
 #5: On a follow-up question, take the existing conversation history along which contains the system prompt, user's previous conversation and assistant responses, along with the user's new input.
 #6: Send the system prompt to Claude only once
+
 
 st.write("Disclaimer: This chatbot is not associated with BillionToOne and should not be considered as one. This is an unofficial bot created over BillionToOne's public FAQs available on their website. This is not medical advice")
 
